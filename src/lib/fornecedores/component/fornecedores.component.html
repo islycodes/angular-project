@@ -1,0 +1,48 @@
+<table mat-table class="tabela" [dataSource]="fornecedores">
+
+<!-- coluna id -->
+<ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Id </th>
+    <td mat-cell *matCellDef="let fornecedor"> {{ fornecedor.id }} </td>
+</ng-container>
+
+<ng-container matColumnDef="name"> 
+    <th mat-header-cell *matHeaderCellDef> Nome </th>
+    <td mat-cell *matCellDef="let fornecedor"> {{ fornecedor.name }} </td>
+</ng-container>
+
+<ng-container matColumnDef="cnpj">
+    <th mat-header-cell *matHeaderCellDef> CNPJ </th>
+    <td mat-cell *matCellDef="let fornecedor"> {{ fornecedor.cnpj }} </td>
+</ng-container>
+
+<ng-container matColumnDef="cell">
+    <th mat-header-cell *matHeaderCellDef> Contato </th>
+    <td mat-cell *matCellDef="let fornecedor"> {{ fornecedor.cell }} </td>
+</ng-container>
+
+<ng-container matColumnDef="address"> 
+    <th mat-header-cell *matHeaderCellDef> Endereço </th>
+    <td mat-cell *matCellDef="let fornecedor"> {{ fornecedor.address }} </td>
+</ng-container>
+
+<ng-container matColumnDef="fornecedorDesde">
+    <th mat-header-cell *matHeaderCellDef> Fornecedor Desde </th>
+    <td mat-cell *matCellDef="let fornecedor"> {{ fornecedor.fornecedorDesde }} </td>
+</ng-container>
+
+<ng-container matColumnDef="ultimoPagamento">
+    <th mat-header-cell *matHeaderCellDef> Último Pagamento </th>
+    <td mat-cell *matCellDef="let fornecedor"> {{ fornecedor.ultimoPagamento }} </td>
+</ng-container>
+
+<ng-container matColumnDef="delete">
+    <th mat-header-cell *matHeaderCellDef> Deletar </th>
+    <td mat-cell *matCellDef="let fornecedor"><button color="accent" mat-mini-fab 
+        (click)="confirmDialog(fornecedor)"><mat-icon>delete</mat-icon></button></td>
+</ng-container>
+
+<tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+<tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+
+</table>

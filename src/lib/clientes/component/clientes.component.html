@@ -1,0 +1,54 @@
+<table mat-table class="tabela" [dataSource]="clientes">
+
+<!-- coluna id -->
+<ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Id </th>
+    <td mat-cell *matCellDef="let cliente"> {{ cliente.id }} </td>
+</ng-container>
+
+<!-- coluna name -->
+<ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Nome </th>
+    <td mat-cell *matCellDef="let cliente"> {{ cliente.name }} </td>
+</ng-container>
+
+<!-- coluna address -->
+<ng-container matColumnDef="cpf">
+    <th mat-header-cell *matHeaderCellDef> CPF </th>
+    <td mat-cell *matCellDef="let cliente"> {{ cliente.cpf }} </td>
+</ng-container>
+
+<!-- coluna cell -->
+<ng-container matColumnDef="cell">
+    <th mat-header-cell *matHeaderCellDef> Contato </th>
+    <td mat-cell *matCellDef="let cliente"> {{ cliente.cell }} </td>
+</ng-container>
+
+<!-- coluna address -->
+<ng-container matColumnDef="address">
+    <th mat-header-cell *matHeaderCellDef> Endereço </th>
+    <td mat-cell *matCellDef="let cliente"> {{ cliente.address }} </td>
+</ng-container>
+
+<!-- coluna address -->
+<ng-container matColumnDef="clienteDesde">
+    <th mat-header-cell *matHeaderCellDef> Cliente Desde </th>
+    <td mat-cell *matCellDef="let cliente"> {{ cliente.clienteDesde }} </td>
+</ng-container>
+
+<!-- coluna address -->
+<ng-container matColumnDef="mensalidade">
+    <th mat-header-cell *matHeaderCellDef> Mensalidade </th>
+    <td mat-cell *matCellDef="let cliente"> {{ cliente.mensalidade }} </td>
+</ng-container>
+
+<ng-container matColumnDef="delete">
+    <th mat-header-cell *matHeaderCellDef> Deletar </th>
+    <td mat-cell *matCellDef="let cliente"><button color="accent" mat-mini-fab 
+        (click)="confirmDialog(cliente)"><mat-icon>delete</mat-icon> </button></td>
+</ng-container> -->
+
+<tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+<tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+
+</table>
